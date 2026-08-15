@@ -1,0 +1,39 @@
+.sidebar-user {
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 10px;
+  transition: background 0.2s ease;
+}
+
+.sidebar-user:hover {
+  background: #1e293b;
+}
+
+/* =====================================================
+   SECURITY ALERT BADGE
+===================================================== */
+
+.security-alert-badge {
+  min-width: 22px;
+  height: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-left: auto;
+
+  padding: 0 6px;
+
+  box-sizing: border-box;
+
+  border-radius: 999px;
+
+  background: #dc2626;
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  line-height: 1;
+}

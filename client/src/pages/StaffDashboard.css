@@ -1,0 +1,953 @@
+/* =========================================================
+   STAFF DASHBOARD
+========================================================= */
+
+.staff-dashboard {
+  width: 100%;
+  max-width: 100%;
+
+  min-width: 0;
+
+  padding: 30px;
+
+  background: #f8fafc;
+
+  min-height: 100vh;
+
+  box-sizing: border-box;
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.dashboard-header {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 30px;
+
+  box-sizing: border-box;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: 28px;
+
+  line-height: 1.2;
+}
+
+.dashboard-header p {
+  margin: 6px 0 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+.dashboard-date {
+  flex-shrink: 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.dashboard-error {
+  width: 100%;
+
+  margin-bottom: 20px;
+
+  padding: 12px 16px;
+
+  background: #fee2e2;
+
+  color: #991b1b;
+
+  border-radius: 10px;
+
+  font-size: 14px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.dashboard-section {
+  width: 100%;
+
+  max-width: 100%;
+
+  min-width: 0;
+
+  margin-bottom: 30px;
+
+  box-sizing: border-box;
+}
+
+.dashboard-section h2 {
+  margin: 0 0 15px;
+
+  color: #0f172a;
+
+  font-size: 20px;
+
+  line-height: 1.3;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.section-heading {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 15px;
+
+  box-sizing: border-box;
+}
+
+.section-heading h2 {
+  margin: 0;
+
+  min-width: 0;
+
+  color: #0f172a;
+
+  font-size: 20px;
+}
+
+.section-heading button {
+  flex-shrink: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #2563eb;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  padding: 5px 0;
+}
+
+.section-heading button:hover {
+  color: #1d4ed8;
+}
+
+
+/* =========================================================
+   OVERVIEW CARDS
+========================================================= */
+
+.overview-cards {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 20px;
+
+  box-sizing: border-box;
+}
+
+.overview-card {
+  min-width: 0;
+
+  background: white;
+
+  border-radius: 14px;
+
+  padding: 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.05);
+
+  box-sizing: border-box;
+}
+
+.overview-icon {
+  width: 45px;
+  height: 45px;
+
+  min-width: 45px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #eff6ff;
+
+  border-radius: 10px;
+
+  font-size: 20px;
+}
+
+.overview-label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+.overview-card strong {
+  display: block;
+
+  color: #0f172a;
+
+  font-size: 25px;
+
+  line-height: 1.2;
+}
+
+
+/* =========================================================
+   DELIVERY TABLE WRAPPER
+
+   IMPORTANT:
+   THIS is the ONLY element that scrolls horizontally.
+========================================================= */
+
+.delivery-table-wrapper {
+  width: 100%;
+
+  max-width: 100%;
+
+  min-width: 0;
+
+  overflow-x: auto;
+
+  overflow-y: hidden;
+
+  -webkit-overflow-scrolling: touch;
+
+  overscroll-behavior-x: contain;
+
+  touch-action: pan-x;
+
+  background: white;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.05);
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   DELIVERY TABLE
+
+   Desktop can use available width.
+   Mobile/tablet gets a minimum width so
+   the wrapper can scroll horizontally.
+========================================================= */
+
+.delivery-table {
+  width: 100%;
+
+  min-width: 720px;
+
+  background: white;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   DELIVERY ROW
+========================================================= */
+
+.delivery-row {
+  width: 100%;
+
+  min-width: 720px;
+
+  display: grid;
+
+  grid-template-columns:
+    170px
+    220px
+    120px
+    120px
+    90px;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 15px 18px;
+
+  box-sizing: border-box;
+
+  border-bottom: 1px solid #e2e8f0;
+
+  font-size: 14px;
+}
+
+.delivery-row:last-child {
+  border-bottom: none;
+}
+
+
+/* =========================================================
+   DELIVERY HEADER
+========================================================= */
+
+.delivery-header {
+  background: #f8fafc;
+
+  color: #475569;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   DELIVERY CELLS
+========================================================= */
+
+.delivery-row > span {
+  min-width: 0;
+
+  color: #334155;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   VIEW BUTTON CELL
+========================================================= */
+
+.delivery-row > span:last-child {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  min-width: 0;
+}
+
+
+/* =========================================================
+   VIEW BUTTON
+========================================================= */
+
+.delivery-row button {
+  width: auto;
+
+  min-width: 60px;
+
+  flex-shrink: 0;
+
+  padding: 7px 12px;
+
+  border: 1px solid #2563eb;
+
+  border-radius: 7px;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.delivery-row button:hover {
+  background: #dbeafe;
+
+  transform: translateY(-1px);
+}
+
+.delivery-row button:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.status {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: fit-content;
+
+  padding: 5px 9px;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+
+  white-space: nowrap;
+}
+
+.status.pending {
+  background: #fef3c7;
+
+  color: #92400e;
+}
+
+.status.completed {
+  background: #dcfce7;
+
+  color: #166534;
+}
+
+.status.cancelled {
+  background: #fee2e2;
+
+  color: #991b1b;
+}
+
+
+/* =========================================================
+   EMPTY / LOADING
+========================================================= */
+
+.delivery-empty {
+  width: 100%;
+
+  padding: 30px;
+
+  text-align: center;
+
+  color: #64748b;
+
+  font-size: 14px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   QUICK ACTIONS
+========================================================= */
+
+.quick-actions {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+
+  box-sizing: border-box;
+}
+
+.quick-action {
+  width: 100%;
+
+  min-width: 0;
+
+  border: none;
+
+  background: white;
+
+  padding: 20px;
+
+  border-radius: 14px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.05);
+
+  box-sizing: border-box;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.quick-action:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.quick-action > span {
+  flex-shrink: 0;
+
+  font-size: 25px;
+}
+
+.quick-action div {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.quick-action strong {
+  color: #0f172a;
+
+  font-size: 15px;
+}
+
+.quick-action small {
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .staff-dashboard {
+    padding: 25px;
+  }
+
+  .overview-cards {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .overview-card:last-child {
+    grid-column: span 2;
+  }
+
+  .delivery-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+  }
+
+  .delivery-table {
+    min-width: 720px;
+  }
+
+  .delivery-row {
+    min-width: 720px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .staff-dashboard {
+    width: 100%;
+
+    max-width: 100%;
+
+    padding: 20px 15px;
+
+    box-sizing: border-box;
+
+    overflow-x: hidden;
+  }
+
+
+  /* HEADER */
+
+  .dashboard-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 8px;
+
+    margin-bottom: 25px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 24px;
+  }
+
+  .dashboard-header p {
+    font-size: 13px;
+  }
+
+  .dashboard-date {
+    white-space: normal;
+
+    font-size: 13px;
+  }
+
+
+  /* OVERVIEW */
+
+  .overview-cards {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+  .overview-card {
+    padding: 16px;
+  }
+
+  .overview-card:last-child {
+    grid-column: auto;
+  }
+
+  .overview-card strong {
+    font-size: 22px;
+  }
+
+
+  /* SECTION */
+
+  .dashboard-section {
+    margin-bottom: 25px;
+
+    width: 100%;
+
+    min-width: 0;
+  }
+
+  .dashboard-section h2 {
+    font-size: 18px;
+  }
+
+
+  /* SECTION HEADING */
+
+  .section-heading {
+    width: 100%;
+
+    gap: 10px;
+
+    margin-bottom: 12px;
+  }
+
+  .section-heading h2 {
+    font-size: 18px;
+  }
+
+  .section-heading button {
+    font-size: 13px;
+  }
+
+
+  /* DELIVERY SCROLLER */
+
+  .delivery-table-wrapper {
+    display: block;
+
+    width: 100%;
+
+    max-width: 100%;
+
+    min-width: 0;
+
+    overflow-x: auto;
+
+    overflow-y: hidden;
+
+    -webkit-overflow-scrolling: touch;
+
+    touch-action: pan-x;
+
+    overscroll-behavior-x: contain;
+
+    border-radius: 12px;
+  }
+
+
+  /* KEEP TABLE WIDE */
+
+  .delivery-table {
+    width: 720px;
+
+    min-width: 720px;
+
+    max-width: none;
+  }
+
+
+  /* KEEP ROW WIDE */
+
+  .delivery-row {
+    width: 720px;
+
+    min-width: 720px;
+
+    grid-template-columns:
+      170px
+      220px
+      120px
+      120px
+      90px;
+
+    padding: 14px 16px;
+
+    gap: 10px;
+
+    font-size: 13px;
+  }
+
+
+  /* DO NOT HIDE HEADER */
+
+  .delivery-header {
+    display: grid;
+  }
+
+
+  /* KEEP EVERYTHING LEFT ALIGNED */
+
+  .delivery-row > span {
+    text-align: left;
+
+    justify-content: flex-start;
+  }
+
+  .delivery-row > span:last-child {
+    justify-content: flex-start;
+  }
+
+
+  /* BUTTON ALWAYS VISIBLE */
+
+  .delivery-row button {
+    min-width: 60px;
+
+    padding: 7px 11px;
+
+    font-size: 13px;
+  }
+
+
+  /* QUICK ACTIONS */
+
+  .quick-actions {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+  .quick-action {
+    padding: 16px;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .staff-dashboard {
+    padding: 15px 10px;
+  }
+
+
+  .dashboard-header h1 {
+    font-size: 22px;
+  }
+
+  .dashboard-header p {
+    font-size: 13px;
+  }
+
+  .dashboard-date {
+    font-size: 12px;
+  }
+
+
+  .overview-card {
+    padding: 15px;
+  }
+
+  .overview-icon {
+    width: 40px;
+    height: 40px;
+
+    min-width: 40px;
+
+    font-size: 18px;
+  }
+
+  .overview-label {
+    font-size: 12px;
+  }
+
+  .overview-card strong {
+    font-size: 21px;
+  }
+
+
+  .dashboard-section h2 {
+    font-size: 17px;
+  }
+
+
+  .section-heading button {
+    font-size: 12px;
+  }
+
+
+  /*
+    Still 720px wide.
+
+    The wrapper is the phone width,
+    so the user can swipe horizontally
+    all the way to the View button.
+  */
+
+  .delivery-table-wrapper {
+    width: 100%;
+
+    max-width: 100%;
+
+    overflow-x: auto;
+
+    overflow-y: hidden;
+
+    -webkit-overflow-scrolling: touch;
+
+    touch-action: pan-x;
+  }
+
+  .delivery-table {
+    width: 720px;
+
+    min-width: 720px;
+  }
+
+  .delivery-row {
+    width: 720px;
+
+    min-width: 720px;
+
+    grid-template-columns:
+      170px
+      220px
+      120px
+      120px
+      90px;
+
+    padding: 13px 14px;
+  }
+
+
+  .delivery-row button {
+    min-width: 60px;
+
+    padding: 7px 10px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 350px) {
+
+  .staff-dashboard {
+    padding: 12px 8px;
+  }
+
+  .overview-card {
+    padding: 14px;
+  }
+
+  .delivery-table {
+    width: 720px;
+
+    min-width: 720px;
+  }
+
+  .delivery-row {
+    width: 720px;
+
+    min-width: 720px;
+  }
+}

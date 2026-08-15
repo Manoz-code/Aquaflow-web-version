@@ -1,0 +1,835 @@
+
+/* =========================================================
+   DELIVERIES PAGE
+========================================================= */
+
+.deliveries-page {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.deliveries-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.deliveries-header h1 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.deliveries-header p {
+  margin: 6px 0 0;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   ADD DELIVERY BUTTON
+========================================================= */
+
+.add-delivery-button {
+  flex-shrink: 0;
+  padding: 11px 17px;
+  border: none;
+  border-radius: 8px;
+  background: #0284c7;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.add-delivery-button:hover {
+  background: #0369a1;
+}
+
+.add-delivery-button:active {
+  transform: scale(0.98);
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.deliveries-error {
+  margin-bottom: 20px;
+  padding: 14px 16px;
+
+  border: 1px solid #fecaca;
+  border-radius: 9px;
+
+  background: #fee2e2;
+  color: #991b1b;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   FORM CARD
+========================================================= */
+
+.delivery-form-card {
+  width: 100%;
+  margin-bottom: 25px;
+  padding: 24px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+}
+
+
+/* =========================================================
+   FORM HEADING
+========================================================= */
+
+.delivery-form-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.delivery-form-heading h2 {
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.delivery-form-heading p {
+  margin: 5px 0 0;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   CLOSE FORM BUTTON
+========================================================= */
+
+.close-delivery-form {
+  flex-shrink: 0;
+
+  width: 32px;
+  height: 32px;
+
+  border: none;
+  border-radius: 7px;
+
+  background: #f1f5f9;
+  color: #64748b;
+
+  font-size: 22px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.close-delivery-form:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.delivery-form-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+.delivery-form-group {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+.delivery-form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+
+/* =========================================================
+   FORM LABEL
+========================================================= */
+
+.delivery-form-group label {
+  margin-bottom: 7px;
+
+  color: #334155;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   FORM INPUTS
+========================================================= */
+
+.delivery-form-group input,
+.delivery-form-group select,
+.delivery-form-group textarea {
+  width: 100%;
+  min-width: 0;
+
+  box-sizing: border-box;
+
+  padding: 11px 12px;
+
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+
+  background: #ffffff;
+  color: #0f172a;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.delivery-form-group textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.delivery-form-group input::placeholder,
+.delivery-form-group textarea::placeholder {
+  color: #94a3b8;
+}
+
+
+/* =========================================================
+   INPUT FOCUS
+========================================================= */
+
+.delivery-form-group input:focus,
+.delivery-form-group select:focus,
+.delivery-form-group textarea:focus {
+  border-color: #0284c7;
+
+  box-shadow:
+    0 0 0 3px rgba(2, 132, 199, 0.1);
+}
+
+
+/* =========================================================
+   TOTAL PREVIEW
+========================================================= */
+
+.delivery-total-preview {
+  width: 100%;
+  min-height: 42px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  padding: 11px 12px;
+
+  border-radius: 8px;
+
+  background: #f0f9ff;
+  color: #0369a1;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   FORM ACTIONS
+========================================================= */
+
+.delivery-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 22px;
+}
+
+
+/* =========================================================
+   FORM BUTTONS
+========================================================= */
+
+.delivery-cancel-button,
+.delivery-save-button {
+  min-width: 120px;
+
+  padding: 10px 16px;
+
+  border: none;
+  border-radius: 8px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.delivery-cancel-button {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.delivery-cancel-button:hover {
+  background: #e2e8f0;
+}
+
+.delivery-save-button {
+  background: #0284c7;
+  color: #ffffff;
+}
+
+.delivery-save-button:hover {
+  background: #0369a1;
+}
+
+.delivery-cancel-button:active,
+.delivery-save-button:active {
+  transform: scale(0.98);
+}
+
+.delivery-cancel-button:disabled,
+.delivery-save-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.deliveries-table-card {
+  width: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   TABLE HEADING
+========================================================= */
+
+.deliveries-table-heading {
+  padding: 20px 24px;
+
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.deliveries-table-heading h2 {
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.deliveries-table-heading span {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #94a3b8;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   TABLE WRAPPER
+========================================================= */
+
+.deliveries-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.deliveries-table {
+  width: 100%;
+  min-width: 1050px;
+
+  border-collapse: collapse;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.deliveries-table th {
+  padding: 13px 16px;
+
+  text-align: left;
+
+  background: #f8fafc;
+
+  color: #64748b;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   TABLE BODY
+========================================================= */
+
+.deliveries-table td {
+  padding: 15px 16px;
+
+  border-bottom: 1px solid #e2e8f0;
+
+  color: #475569;
+
+  font-size: 13px;
+
+  white-space: nowrap;
+}
+
+.deliveries-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.deliveries-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.deliveries-table td strong {
+  color: #0f172a;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.delivery-status {
+  display: inline-block;
+
+  padding: 5px 9px;
+
+  border-radius: 20px;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.delivery-status.pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.delivery-status.delivered {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.delivery-status.cancelled {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+
+/* =========================================================
+   DELIVERY ACTIONS
+========================================================= */
+
+.delivery-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.deliver-button,
+.cancel-delivery-button {
+  padding: 7px 10px;
+
+  border: none;
+  border-radius: 7px;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.deliver-button {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.deliver-button:hover {
+  background: #bbf7d0;
+}
+
+.cancel-delivery-button {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.cancel-delivery-button:hover {
+  background: #fecaca;
+}
+
+.deliver-button:disabled,
+.cancel-delivery-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   COMPLETED / CANCELLED
+========================================================= */
+
+.action-completed {
+  color: #166534;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.action-cancelled {
+  color: #991b1b;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   EMPTY / LOADING
+========================================================= */
+
+.deliveries-empty {
+  padding: 50px 20px;
+
+  text-align: center;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .delivery-form-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .deliveries-table-heading {
+    padding: 18px 20px;
+  }
+
+  .deliveries-table th,
+  .deliveries-table td {
+    padding-left: 13px;
+    padding-right: 13px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE — 700px
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .deliveries-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+
+  .deliveries-header h1 {
+    font-size: 24px;
+  }
+
+  .deliveries-header p {
+    font-size: 13px;
+  }
+
+  .add-delivery-button {
+    width: 100%;
+  }
+
+
+  /* FORM */
+
+  .delivery-form-card {
+    padding: 18px;
+    border-radius: 12px;
+  }
+
+  .delivery-form-heading {
+    margin-bottom: 18px;
+  }
+
+  .delivery-form-heading h2 {
+    font-size: 18px;
+  }
+
+  .delivery-form-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .delivery-form-group.full-width {
+    grid-column: auto;
+  }
+
+
+  /* FORM ACTIONS */
+
+  .delivery-form-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .delivery-cancel-button,
+  .delivery-save-button {
+    width: 100%;
+  }
+
+
+  /* TABLE */
+
+  .deliveries-table-card {
+    border-radius: 12px;
+  }
+
+  .deliveries-table-heading {
+    padding: 17px 18px;
+  }
+
+  .deliveries-table-heading h2 {
+    font-size: 17px;
+  }
+
+  .deliveries-table {
+    min-width: 950px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE — 500px
+========================================================= */
+
+@media (max-width: 500px) {
+
+  .deliveries-header h1 {
+    font-size: 22px;
+  }
+
+  .deliveries-header p {
+    font-size: 12px;
+  }
+
+  .delivery-form-card {
+    padding: 15px;
+  }
+
+  .delivery-form-heading h2 {
+    font-size: 17px;
+  }
+
+  .delivery-form-heading p {
+    font-size: 12px;
+  }
+
+  .close-delivery-form {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+  }
+
+  .delivery-form-group input,
+  .delivery-form-group select,
+  .delivery-form-group textarea {
+    padding: 10px 11px;
+    font-size: 13px;
+  }
+
+  .delivery-total-preview {
+    min-height: 40px;
+    font-size: 14px;
+  }
+
+  .deliveries-table-heading {
+    padding: 16px;
+  }
+
+  .deliveries-table-heading h2 {
+    font-size: 16px;
+  }
+
+  .deliveries-table-heading span {
+    font-size: 11px;
+  }
+
+  .deliveries-table {
+    min-width: 900px;
+  }
+
+  .deliveries-empty {
+    padding: 40px 15px;
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL DEVICES — 360px
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .delivery-form-card {
+    padding: 13px;
+  }
+
+  .deliveries-header h1 {
+    font-size: 20px;
+  }
+
+  .add-delivery-button {
+    padding: 10px 13px;
+    font-size: 12px;
+  }
+
+  .delivery-form-group label {
+    font-size: 12px;
+  }
+
+  .delivery-form-group input,
+  .delivery-form-group select,
+  .delivery-form-group textarea {
+    font-size: 12px;
+  }
+}
+
+
+/* Quantity preset button */
+.quantity-presets {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.quantity-presets button {
+  flex: 1;
+  padding: 10px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #fff;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quantity-presets button:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+.quantity-presets button:active {
+  transform: scale(0.98);
+}

@@ -1,0 +1,692 @@
+/* =====================================================
+   SECURITY ALERTS PAGE
+===================================================== */
+
+.security-alerts-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 30px;
+  box-sizing: border-box;
+  background: #f8fafc;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.security-alerts-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.security-alerts-header h1 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.security-alerts-header p {
+  margin: 6px 0 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+
+/* =====================================================
+   REFRESH BUTTON
+===================================================== */
+
+.security-refresh-button {
+  border: none;
+  border-radius: 8px;
+
+  padding: 10px 16px;
+
+  background: #0f172a;
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.security-refresh-button:hover {
+  background: #1e293b;
+}
+
+.security-refresh-button:active {
+  transform: scale(0.97);
+}
+
+.security-refresh-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.security-alert-error {
+  margin-bottom: 20px;
+
+  padding: 14px 16px;
+
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+
+  background: #fef2f2;
+  color: #b91c1c;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+/* =====================================================
+   EMPTY / LOADING CARD
+===================================================== */
+
+.security-alerts-card {
+  width: 100%;
+  min-height: 300px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+  text-align: center;
+}
+
+
+/* =====================================================
+   ICON
+===================================================== */
+
+.security-alert-icon {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 15px;
+
+  border-radius: 50%;
+
+  background: #fff7ed;
+  color: #c2410c;
+
+  font-size: 26px;
+}
+
+
+/* =====================================================
+   CARD TITLE
+===================================================== */
+
+.security-alerts-card h2 {
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: 20px;
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   CARD DESCRIPTION
+===================================================== */
+
+.security-alerts-card p {
+  margin: 8px 0 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+
+/* =====================================================
+   ALERT TABLE CARD
+===================================================== */
+
+.security-alerts-table-card {
+  width: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   TABLE HEADER
+===================================================== */
+
+.security-alerts-table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 22px 24px;
+
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.security-alerts-table-header h2 {
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.security-alerts-table-header p {
+  margin: 5px 0 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+
+/* =====================================================
+   ALERT COUNT
+===================================================== */
+
+.alert-count {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 6px 10px;
+
+  border-radius: 20px;
+
+  background: #fff7ed;
+  color: #c2410c;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   TABLE WRAPPER
+===================================================== */
+
+.security-alerts-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.security-alerts-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  min-width: 800px;
+}
+
+
+/* =====================================================
+   TABLE HEAD
+===================================================== */
+
+.security-alerts-table thead {
+  background: #f8fafc;
+}
+
+.security-alerts-table th {
+  padding: 14px 18px;
+
+  text-align: left;
+
+  color: #475569;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+
+  border-bottom: 1px solid #e2e8f0;
+
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   TABLE BODY
+===================================================== */
+
+.security-alerts-table td {
+  padding: 16px 18px;
+
+  color: #334155;
+
+  font-size: 14px;
+
+  border-bottom: 1px solid #f1f5f9;
+
+  vertical-align: middle;
+}
+
+
+/* =====================================================
+   TABLE ROW
+===================================================== */
+
+.security-alerts-table tbody tr {
+  transition: background 0.15s ease;
+}
+
+.security-alerts-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.security-alerts-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* =====================================================
+   SECURITY ACTION
+===================================================== */
+
+.security-action {
+  display: inline-flex;
+
+  padding: 6px 9px;
+
+  border-radius: 6px;
+
+  background: #fef2f2;
+  color: #b91c1c;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.security-alerts-table td:nth-child(2) {
+  max-width: 400px;
+
+  line-height: 1.5;
+}
+
+
+/* =====================================================
+   USER
+===================================================== */
+
+.security-alerts-table td:nth-child(3) {
+  font-weight: 600;
+
+  color: #334155;
+}
+
+
+/* =====================================================
+   IP ADDRESS
+===================================================== */
+
+.security-alerts-table td:nth-child(4) {
+  font-family: monospace;
+
+  color: #64748b;
+
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   DATE
+===================================================== */
+
+.security-alerts-table td:nth-child(5) {
+  color: #64748b;
+
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+  .security-alerts-page {
+    padding: 20px;
+  }
+
+
+  .security-alerts-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    margin-bottom: 20px;
+  }
+
+
+  .security-alerts-header h1 {
+    font-size: 24px;
+  }
+
+
+  .security-refresh-button {
+    width: 100%;
+  }
+
+
+  .security-alerts-card {
+    min-height: 250px;
+
+    padding: 20px;
+  }
+
+
+  .security-alerts-table-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    padding: 18px;
+  }
+
+
+  .security-alerts-table th,
+  .security-alerts-table td {
+    padding: 13px 14px;
+  }
+}
+
+/* =====================================================
+   HEADER ACTIONS
+===================================================== */
+
+.security-alerts-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.security-alert-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+
+/* =====================================================
+   UNREAD COUNT
+===================================================== */
+
+.security-unread-count {
+  padding: 7px 12px;
+  border-radius: 999px;
+
+  background: #fee2e2;
+  color: #b91c1c;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   MARK ALL
+===================================================== */
+
+.security-mark-all-button {
+  border: none;
+  border-radius: 8px;
+
+  padding: 9px 14px;
+
+  background: #0f172a;
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.security-mark-all-button:hover {
+  background: #1e293b;
+}
+
+.security-mark-all-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+/* =====================================================
+   REFRESH
+===================================================== */
+
+.security-refresh-button {
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+
+  padding: 9px 14px;
+
+  background: #ffffff;
+  color: #334155;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.security-refresh-button:hover {
+  background: #f1f5f9;
+}
+
+.security-refresh-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+/* =====================================================
+   WARNING
+===================================================== */
+
+.security-alert-notice {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-bottom: 20px;
+  padding: 16px 18px;
+
+  border: 1px solid #fed7aa;
+  border-radius: 12px;
+
+  background: #fff7ed;
+}
+
+.security-alert-notice-icon {
+  font-size: 24px;
+}
+
+.security-alert-notice strong {
+  color: #9a3412;
+}
+
+.security-alert-notice p {
+  margin: 4px 0 0;
+  color: #7c2d12;
+  font-size: 13px;
+}
+
+
+/* =====================================================
+   UNREAD ROW
+===================================================== */
+
+.security-alert-unread {
+  background: #fff7ed;
+}
+
+.security-alert-unread td {
+  font-weight: 500;
+}
+
+
+/* =====================================================
+   UNREAD BADGE
+===================================================== */
+
+.security-unread-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 4px 9px;
+
+  border-radius: 999px;
+
+  background: #dc2626;
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   READ BADGE
+===================================================== */
+
+.security-read-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 4px 9px;
+
+  border-radius: 999px;
+
+  background: #dcfce7;
+  color: #166534;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   MARK AS READ BUTTON
+===================================================== */
+
+.security-mark-read-button {
+  border: none;
+  border-radius: 7px;
+
+  padding: 7px 11px;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.security-mark-read-button:hover {
+  background: #1d4ed8;
+}
+
+.security-mark-read-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+/* =====================================================
+   READ TEXT
+===================================================== */
+
+.security-read-text {
+  color: #16a34a;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+  .security-alerts-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .security-alert-header-actions {
+    width: 100%;
+  }
+
+  .security-alerts-table-wrapper {
+    overflow-x: auto;
+  }
+
+}
